@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Categories</title>
+
+</h:head>
+<h:body>
+	<table border="1" width="90%">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<ui:repeat value="#{categoryBean.allCategories()}" var="category"
+				varStatus="status">
+				<tr>
+					<td>#{category.categoryName}</td>
+					<td>#{category.categoryDescription}</td>
+				</tr>
+			</ui:repeat>
+		</tbody>
+	</table>
+	<div>
+		<a href="index.xhtml">Add another</a>
+	</div>
+</h:body>
+</html>
